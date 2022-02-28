@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 100C Model Setup 'slave_1_ack'
+Slack : -2.596
+TNS   : -4.834
+
+Type  : Slow 1200mV 100C Model Setup 'slave_2_ack'
+Slack : -2.530
+TNS   : -5.028
+
+Type  : Slow 1200mV 100C Model Hold 'slave_1_ack'
+Slack : 1.595
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'slave_2_ack'
+Slack : 1.793
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'slave_1_ack'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'slave_2_ack'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'master_1_addr[31]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'master_2_addr[31]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV -40C Model Setup 'slave_1_ack'
+Slack : -2.246
+TNS   : -4.176
+
+Type  : Slow 1200mV -40C Model Setup 'slave_2_ack'
+Slack : -2.194
+TNS   : -4.351
+
+Type  : Slow 1200mV -40C Model Hold 'slave_1_ack'
+Slack : 1.365
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'slave_2_ack'
+Slack : 1.546
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'slave_1_ack'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'slave_2_ack'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'master_1_addr[31]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'master_2_addr[31]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV -40C Model Setup 'slave_1_ack'
+Slack : -0.643
+TNS   : -1.086
+
+Type  : Fast 1200mV -40C Model Setup 'slave_2_ack'
+Slack : -0.612
+TNS   : -1.205
+
+Type  : Fast 1200mV -40C Model Hold 'slave_1_ack'
+Slack : 0.541
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Hold 'slave_2_ack'
+Slack : 0.732
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'slave_1_ack'
+Slack : -3.000
+TNS   : -5.100
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'slave_2_ack'
+Slack : -3.000
+TNS   : -5.100
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'master_1_addr[31]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'master_2_addr[31]'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------
