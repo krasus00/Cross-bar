@@ -18,6 +18,7 @@ vsim -L work -lib work -t ns -voptargs="+acc" ${moduleName}_tb;
 
 add wave -logic -unsigned sim:/${moduleName}_tb/grant
 add wave -logic -unsigned sim:/${moduleName}_tb/ack
+add wave -logic -unsigned sim:/${moduleName}_tb/clk
 add wave -logic -unsigned sim:/${moduleName}_tb/rst
 add wave -logic -unsigned sim:/${moduleName}_tb/req
 #add wave -logic -unsigned sim:/${moduleName}_tb/pointer_req

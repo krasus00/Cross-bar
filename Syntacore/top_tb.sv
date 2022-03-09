@@ -182,14 +182,15 @@ module top_tb();
 		i=0;
 		$readmemb("test_vectors.tv", IN_MASTER_VECTOR);
 
-		master_1_req = 0;
- 		master_1_addr= '0;
-		master_1_cmd = 0;
-
-		master_2_req = 0;
- 		master_2_addr= 32'h00000000;
-		master_2_cmd = 0;
-
+		// master_1_req = 0;
+ 		// master_1_addr= '0;
+		// master_1_cmd = 0;
+		// master_1_wdata = 0;
+		//
+		// master_2_req = 0;
+ 		// master_2_addr= 32'h00000000;
+		// master_2_wdata = 0;
+		//
 
 		{master_1_req, addr[0], master_1_cmd, wdata[0]} = IN_MASTER_VECTOR[i];
 		{master_2_req, addr[1], master_2_cmd, wdata[1]} = IN_MASTER_VECTOR[i+1];

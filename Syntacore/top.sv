@@ -101,6 +101,7 @@ module top
 		.master_ack(master_1_ack),
 		.master_rdata(master_1_rdata),
 
+		.clk(clk),
 		.rst(rst)
 	);
 
@@ -132,6 +133,7 @@ module top
 		.master_ack(master_2_ack),
 		.master_rdata(master_2_rdata),
 
+		.clk(clk),
 		.rst(rst)
 	);
 
@@ -143,6 +145,7 @@ assign arb_slave_2_req = {reg_to_slave_2_req[1],reg_to_slave_2_req[0]};
 		.ack(slave_1_ack),
 		.req(arb_slave_1_req),
 		.grant(arb_to_slave_1_req),
+		.clk(clk),
 		.rst(rst)
 
 	);
@@ -152,6 +155,7 @@ assign arb_slave_2_req = {reg_to_slave_2_req[1],reg_to_slave_2_req[0]};
 		.ack(slave_2_ack),
 		.req(arb_slave_2_req),
 		.grant (arb_to_slave_2_req),
+		.clk(clk),
 		.rst(rst)
 
 	);
@@ -189,6 +193,7 @@ assign arb_slave_2_req = {reg_to_slave_2_req[1],reg_to_slave_2_req[0]};
 		.slave_cmd(slave_1_cmd),
 		.slave_wdata(slave_1_wdata),
 
+		.clk(clk),
 		.rst(rst)
 
 	);
@@ -226,6 +231,7 @@ assign arb_slave_2_req = {reg_to_slave_2_req[1],reg_to_slave_2_req[0]};
 		.slave_cmd(slave_2_cmd),
 		.slave_wdata(slave_2_wdata),
 
+		.clk(clk),
 		.rst(rst)
 
 

@@ -1,10 +1,7 @@
 `timescale 1ns/100ps
 module Mux_slaves_tb();
-	parameter bits_addr_slave =	 2; //сколько бит занимает адрес устройства
-	parameter slaves_number =	 2; //количество выходных устройств
-	parameter first_slave = 	 1'b0;
-	parameter second_slave = 	 1'b1;
-	parameter N = 32;
+	parameter bits_addr_slave =	 1; //сколько бит занимает адрес устройства
+	parameter N = 32; //разрядность
  	parameter CLK_DELAY = 1;
 	reg				master_req;
 	reg [N-1:0]		master_addr;
@@ -23,7 +20,7 @@ module Mux_slaves_tb();
 	reg [N-1:0]			slave_2_rdata ;
 
 	wire				slave_2_req	;
-	wire [N-1:0]		slave_2_addr	;
+	wire [N-1:0]		slave_2_addr;
 	wire				slave_2_cmd	;
 	wire [N-1:0]		slave_2_wdata	;
 
@@ -60,7 +57,8 @@ module Mux_slaves_tb();
 
 		.master_ack(master_ack),
 		.master_rdata(master_rdata),
-
+		
+		.clk(clk),
 		.rst(rst)
 	);
 
@@ -86,6 +84,6 @@ module Mux_slaves_tb();
 	end
 
 		always
-			#(4*CLK_DELAY) master_addr[31]= ~master_addr[31];;
+			#(4*CLK_DELAY) master_addr[N-bits_addr_slave]= ~master_addr[N-bits_addr_slave];
 
 endmodule

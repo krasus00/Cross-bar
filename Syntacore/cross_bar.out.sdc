@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition"
 
-## DATE    "Mon Feb 28 02:36:05 2022"
+## DATE    "Mon Feb 28 12:53:31 2022"
 
 ##
 ## DEVICE  "EP4CGX110DF31I7"
@@ -61,30 +61,30 @@ create_clock -name {slave_2_ack} -period 1.000 -waveform { 0.000 0.500 } [get_po
 # Set Clock Uncertainty
 #**************************************************************
 
-set_clock_uncertainty -rise_from [get_clocks {slave_2_ack}] -rise_to [get_clocks {slave_2_ack}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {slave_2_ack}] -fall_to [get_clocks {slave_2_ack}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {slave_2_ack}] -rise_to [get_clocks {slave_2_ack}]  0.020  
-set_clock_uncertainty -fall_from [get_clocks {slave_2_ack}] -fall_to [get_clocks {slave_2_ack}]  0.020  
-set_clock_uncertainty -rise_from [get_clocks {master_1_addr[31]}] -rise_to [get_clocks {slave_2_ack}]  0.040  
-set_clock_uncertainty -rise_from [get_clocks {master_1_addr[31]}] -fall_to [get_clocks {slave_2_ack}]  0.040  
 set_clock_uncertainty -rise_from [get_clocks {master_1_addr[31]}] -rise_to [get_clocks {slave_1_ack}]  0.040  
 set_clock_uncertainty -rise_from [get_clocks {master_1_addr[31]}] -fall_to [get_clocks {slave_1_ack}]  0.040  
-set_clock_uncertainty -fall_from [get_clocks {master_1_addr[31]}] -rise_to [get_clocks {slave_2_ack}]  0.040  
-set_clock_uncertainty -fall_from [get_clocks {master_1_addr[31]}] -fall_to [get_clocks {slave_2_ack}]  0.040  
+set_clock_uncertainty -rise_from [get_clocks {master_1_addr[31]}] -rise_to [get_clocks {slave_2_ack}]  0.040  
+set_clock_uncertainty -rise_from [get_clocks {master_1_addr[31]}] -fall_to [get_clocks {slave_2_ack}]  0.040  
 set_clock_uncertainty -fall_from [get_clocks {master_1_addr[31]}] -rise_to [get_clocks {slave_1_ack}]  0.040  
 set_clock_uncertainty -fall_from [get_clocks {master_1_addr[31]}] -fall_to [get_clocks {slave_1_ack}]  0.040  
-set_clock_uncertainty -rise_from [get_clocks {master_2_addr[31]}] -rise_to [get_clocks {slave_2_ack}]  0.040  
-set_clock_uncertainty -rise_from [get_clocks {master_2_addr[31]}] -fall_to [get_clocks {slave_2_ack}]  0.040  
-set_clock_uncertainty -rise_from [get_clocks {master_2_addr[31]}] -rise_to [get_clocks {slave_1_ack}]  0.040  
-set_clock_uncertainty -rise_from [get_clocks {master_2_addr[31]}] -fall_to [get_clocks {slave_1_ack}]  0.040  
-set_clock_uncertainty -fall_from [get_clocks {master_2_addr[31]}] -rise_to [get_clocks {slave_2_ack}]  0.040  
-set_clock_uncertainty -fall_from [get_clocks {master_2_addr[31]}] -fall_to [get_clocks {slave_2_ack}]  0.040  
-set_clock_uncertainty -fall_from [get_clocks {master_2_addr[31]}] -rise_to [get_clocks {slave_1_ack}]  0.040  
-set_clock_uncertainty -fall_from [get_clocks {master_2_addr[31]}] -fall_to [get_clocks {slave_1_ack}]  0.040  
+set_clock_uncertainty -fall_from [get_clocks {master_1_addr[31]}] -rise_to [get_clocks {slave_2_ack}]  0.040  
+set_clock_uncertainty -fall_from [get_clocks {master_1_addr[31]}] -fall_to [get_clocks {slave_2_ack}]  0.040  
 set_clock_uncertainty -rise_from [get_clocks {slave_1_ack}] -rise_to [get_clocks {slave_1_ack}]  0.020  
 set_clock_uncertainty -rise_from [get_clocks {slave_1_ack}] -fall_to [get_clocks {slave_1_ack}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {slave_1_ack}] -rise_to [get_clocks {slave_1_ack}]  0.020  
 set_clock_uncertainty -fall_from [get_clocks {slave_1_ack}] -fall_to [get_clocks {slave_1_ack}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {master_2_addr[31]}] -rise_to [get_clocks {slave_1_ack}]  0.040  
+set_clock_uncertainty -rise_from [get_clocks {master_2_addr[31]}] -fall_to [get_clocks {slave_1_ack}]  0.040  
+set_clock_uncertainty -rise_from [get_clocks {master_2_addr[31]}] -rise_to [get_clocks {slave_2_ack}]  0.040  
+set_clock_uncertainty -rise_from [get_clocks {master_2_addr[31]}] -fall_to [get_clocks {slave_2_ack}]  0.040  
+set_clock_uncertainty -fall_from [get_clocks {master_2_addr[31]}] -rise_to [get_clocks {slave_1_ack}]  0.040  
+set_clock_uncertainty -fall_from [get_clocks {master_2_addr[31]}] -fall_to [get_clocks {slave_1_ack}]  0.040  
+set_clock_uncertainty -fall_from [get_clocks {master_2_addr[31]}] -rise_to [get_clocks {slave_2_ack}]  0.040  
+set_clock_uncertainty -fall_from [get_clocks {master_2_addr[31]}] -fall_to [get_clocks {slave_2_ack}]  0.040  
+set_clock_uncertainty -rise_from [get_clocks {slave_2_ack}] -rise_to [get_clocks {slave_2_ack}]  0.020  
+set_clock_uncertainty -rise_from [get_clocks {slave_2_ack}] -fall_to [get_clocks {slave_2_ack}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {slave_2_ack}] -rise_to [get_clocks {slave_2_ack}]  0.020  
+set_clock_uncertainty -fall_from [get_clocks {slave_2_ack}] -fall_to [get_clocks {slave_2_ack}]  0.020  
 
 
 #**************************************************************

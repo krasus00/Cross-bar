@@ -1,13 +1,13 @@
 
 module Mux_masters
 #(
-	parameter bits_addr_slave =	 2, //сколько бит занимает адрес устройства
+	parameter bits_addr_slave =	 1, //сколько бит занимает адрес устройства
 	parameter masters_number =	 2, //количество выходных устройств
 	parameter first_master = 	 2'b01,
 	parameter second_master = 	 2'b10,
-	parameter N = 32
+	parameter N = 32 //разрядность
  )(
-	input reg [masters_number-1:0]	arb_master_req,
+	input reg [masters_number-1:0]	arb_master_req, //выход с арбитра
 
 	input reg [N-1:0]			master_1_addr,
 	input reg					master_1_cmd,
@@ -36,68 +36,69 @@ module Mux_masters
 	output reg [N-1:0]			master_2_rdata,
 
 
-	input					rst
+	input					rst,
+	input					clk
 );
 
-	always @*
+	always @ (posedge clk or negedge rst)
 	if(rst)
 	begin
-		slave_req  = '0;
-		slave_addr = '0;
-		slave_cmd  = '0;
-		slave_wdata = '0;
+		slave_req  <= '0;
+		slave_addr <= '0;
+		slave_cmd  <= '0;
+		slave_wdata <= '0;
 
-		master_1_ack = 0;
-		master_1_rdata = 0;
+		master_1_ack <= 0;
+		master_1_rdata <= 0;
 
-		master_2_ack = 0;
-		master_2_rdata = 0;
+		master_2_ack <= 0;
+		master_2_rdata <= 0;
 	end
 	else
-	case (arb_master_req)			//не хватает сброса друугих значений в ноль.
+	case (arb_master_req)
 			first_master:
 			begin
-				slave_req = master_1_req;
-				slave_addr = master_1_addr;
-				slave_cmd  = master_1_cmd;
-				slave_wdata = master_1_wdata;
+				slave_req <= master_1_req;
+				slave_addr <= master_1_addr;
+				slave_cmd  <= master_1_cmd;
+				slave_wdata <= master_1_wdata;
 
-				master_1_ack  = slave_ack;
-				master_1_rdata  = slave_rdata;
+				master_1_ack  <= slave_ack;
+				master_1_rdata  <= slave_rdata;
 
-				master_2_ack  = 0;
-				master_2_rdata  ='0;
+				master_2_ack  <= 0;
+				master_2_rdata  <='0;
 
 
 			end
 			second_master:
 			begin
-				slave_req = master_2_req;
-				slave_addr = master_2_addr;
-				slave_cmd  = master_2_cmd;
-				slave_wdata = master_2_wdata;
+				slave_req <= master_2_req;
+				slave_addr <= master_2_addr;
+				slave_cmd  <= master_2_cmd;
+				slave_wdata <= master_2_wdata;
 
-				master_1_ack  = 0;
-				master_1_rdata  = '0;
+				master_1_ack  <= 0;
+				master_1_rdata  <= '0;
 
 
-				master_2_ack  = slave_ack;
-				master_2_rdata  = slave_rdata;
+				master_2_ack  <= slave_ack;
+				master_2_rdata  <= slave_rdata;
 
 			end
 			default:
 			begin
-				slave_req = 0;
-				slave_addr =0;
-				slave_cmd  = 0;
-				slave_wdata = 0;
+				slave_req <= 0;
+				slave_addr <=0;
+				slave_cmd  <= 0;
+				slave_wdata <= 0;
 
-				master_1_ack  = 0;
-				master_1_rdata  = '0;
+				master_1_ack  <= 0;
+				master_1_rdata  <= '0;
 
 
-				master_2_ack  = 0;
-				master_2_rdata  = 0;
+				master_2_ack  <= 0;
+				master_2_rdata  <= 0;
 
 			end
 	endcase
