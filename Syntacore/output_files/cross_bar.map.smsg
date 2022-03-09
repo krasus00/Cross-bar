@@ -1,2 +1,0 @@
-Warning (10268): Verilog HDL information at slaves.sv(16): always construct contains both blocking and non-blocking assignments File: /home/mboris/projectsVerilog/Syntacore/test/slaves.sv Line: 16
-Warning (10268): Verilog HDL information at masters.sv(24): always construct contains both blocking and non-blocking assignments File: /home/mboris/projectsVerilog/Syntacore/test/masters.sv Line: 24
